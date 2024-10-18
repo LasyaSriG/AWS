@@ -1,0 +1,37 @@
+aws iam create-group --group-name MyGroup
+
+aws iam create-policy --policy-name MyPolicy --policy-document file://policy.json
+
+aws iam create-user --user-name MyUser
+
+aws iam attach-group-policy --group-name MyGroup --policy-arn arn:aws:iam::ACCOUNT_ID:policy/MyPolicy
+
+aws iam list-policies --query "Policies[*].{ARN:Arn}" --output text
+
+aws iam list-policies --query "Policies[?PolicyName=='YOUR_POLICY_NAME'].{ARN:Arn}" --output text
+
+aws iam add-user-to-group --user-name MyUser --group-name MyGroup
+
+aws iam create-access-key --user-name MyUser
+
+aws iam create-login-profile --user-name MyUser --password MySecurePassword --password-reset-required
+
+aws iam create-login-profile --user-name MyUser --password MySecurePassword --no-password-reset-required
+
+aws iam delete-login-profile --user-name MyUser
+
+aws iam list-access-keys --user-name MyUser
+
+aws iam delete-access-key --user-name MyUser --access-key-id ACCESS_KEY_ID
+
+aws iam detach-group-policy --group-name MyGroup --policy-arn arn:aws:iam::872515272192:policy/MyPolicy
+
+aws iam detach-user-policy --user-name MyUser --policy-arn arn:aws:iam::872515272192:policy/MyPolicy
+
+aws iam delete-policy --policy-arn arn:aws:iam::872515272192:policy/MyPolicy
+
+aws iam remove-user-from-group --user-name MyUser --group-name MyGroup
+
+aws iam delete-user --user-name MyUser
+
+aws iam delete-group --group-name MyGroup
