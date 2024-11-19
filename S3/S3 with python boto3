@@ -1,0 +1,64 @@
+import boto3
+
+#create an object for an s3 service
+s3_client = boto3.client('s3', 
+                        aws_access_key_id=ACCESS_KEY,
+                        aws_secret_access_key=SECRET_KEY,
+                        region_name="ap-south-1")
+
+#creation of bucket
+response = s3_client.create_bucket(
+    Bucket='lasya-python-bucket',
+    CreateBucketConfiguration={
+       'LocationConstraint': 'ap-south-1'
+    }
+)    
+
+print(response)
+
+#upload a file to s3 bucket
+response = s3_client.put_object(
+    Body=open("policy.json", "r").read(),
+    Bucket='lasya-python-bucket',
+    Key='policy.json'
+)
+
+print(response)
+
+#download a file to local
+response = s3_client.get_object(
+    Bucket='lasya-python-bucket',
+    Key='policy.json'
+)
+
+print(response)
+
+#list the buckets
+response = s3_client.list_buckets()
+buckets = response.get("Buckets")
+
+print(f"Total buckets: {len(buckets)}")
+print(buckets)    
+
+#list the objects
+response = s3_client.list_objects(
+    Bucket='lasya-python-bucket'
+)
+
+objects = response.get("contents")
+
+print(f"Total objects: {len(objects)}")
+print(objects)
+
+#delete the object
+response = s3_client.delete_object(
+    Bucket='lasya-python-bucket',
+    Key='first-file'
+)
+
+print(response)
+
+#delete the bucket
+response = s3_client.delete_bucket(
+    Bucket='lasya-python-bucket'
+)
