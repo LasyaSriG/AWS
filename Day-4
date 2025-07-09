@@ -1,74 +1,84 @@
+# 🖥️ Client-Server Architecture and Its Types
+
 ## 🔷 What is Client-Server Architecture?
 
-**Client-Server Architecture** is a network design where the **client** requests services or resources, and the **server** provides them. It divides tasks and responsibilities between the two, allowing for efficient resource sharing, centralized control, and scalability.
+**Client-Server Architecture** is a network model where the **client** requests resources or services, and the **server** provides them. It separates responsibilities for better management, scalability, and performance.
 
 ---
 
 ## 🧩 Key Components
 
-| Component  | Role                                                                |
-| ---------- | ------------------------------------------------------------------- |
-| **Client** | Initiates requests (e.g., a browser requesting a webpage).          |
+| Component | Role |
+|----------|------|
+| **Client** | Initiates requests (e.g., a browser requesting a webpage). |
 | **Server** | Responds to requests (e.g., a web server sending back the webpage). |
 
 ---
 
 ## 🔄 How It Works
 
-1. **Client** sends a request (e.g., "fetch this page").
-2. **Server** processes it and sends back a response (e.g., "here's the page").
+1. The **Client** sends a request (e.g., for a web page or data).
+2. The **Server** processes the request and sends back a response.
 
 ---
 
 ## 🔹 Types of Client-Server Architecture
 
-### 1. **1-Tier Architecture (Monolithic)**
+### 1. 1-Tier Architecture (Monolithic)
 
-* Everything (UI, logic, database) runs on a single system.
-* **Example**: A standalone desktop app.
-* ❌ Not scalable or flexible.
-
----
-
-### 2. **2-Tier Architecture**
-
-* Splits into:
-
-  * **Client**: UI and business logic
-  * **Server**: Database
-* **Example**: Applications using SQL Server as backend and a frontend app.
-* ✅ Better than 1-tier but still limited in scalability.
+- All components (UI, logic, and database) reside on the same system.
+- **Example**: A standalone desktop application.
+- ❌ Not scalable or flexible.
 
 ---
 
-### 3. **3-Tier Architecture (Most Common)**
+### 2. 2-Tier Architecture
 
-* Three layers:
+- Divides the system into:
+  - **Client**: Handles UI and business logic.
+  - **Server**: Handles the database.
+- **Example**: Applications using MS Access or SQL Server as the backend.
+- ✅ Better than 1-tier but still has limitations.
 
+---
+
+### 3. 3-Tier Architecture (Most Common)
+
+- Splits the application into three logical layers:
   1. **Presentation Layer (Client UI)**
   2. **Application Layer (Business Logic)**
   3. **Data Layer (Database)**
-* **Example**: Web browser → Web server → Database server
-* ✅ Highly scalable, secure, and manageable.
+- **Example**: Web Browser → Web Server → Database Server
+- ✅ Scalable, secure, and manageable.
 
 ---
 
-### 4. **N-Tier Architecture (Multi-Tier)**
+### 4. N-Tier Architecture (Multi-Tier)
 
-* Extends 3-tier by adding more layers like:
+- An extension of 3-tier architecture with additional layers like:
+  - Web Server
+  - Application Server
+  - Middleware
+- Used in large-scale enterprise and cloud environments.
+- ✅ Highly modular, maintainable, and scalable.
 
-  * Web server
-  * Application server
-  * Middleware
-* Used in enterprise and cloud apps.
-* ✅ Very modular and scalable.
+---
+
+### 5. Peer-to-Peer (P2P) [Not True Client-Server]
+
+- Every node acts as both client and server.
+- **Example**: Torrenting systems like BitTorrent.
+- ❌ No central server — **not a client-server model** but good for comparison.
 
 ---
 
-### 5. **Peer-to-Peer (Not True Client-Server)**
+## ✅ Summary
 
-* Every node acts as both client and server.
-* **Example**: Torrent systems.
-* ❌ No central server; not a client-server model but worth contrasting.
+| Architecture | Layers | Scalability | Example |
+|--------------|--------|-------------|---------|
+| 1-Tier       | 1      | ❌ Low       | Standalone App |
+| 2-Tier       | 2      | ⚠️ Medium    | Client + DB |
+| 3-Tier       | 3      | ✅ High      | Web App |
+| N-Tier       | 3+     | ✅✅ Very High| Enterprise Cloud App |
+| P2P          | -      | ✅ (decentralized) | Torrent |
 
----
