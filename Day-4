@@ -1,0 +1,74 @@
+## 🔷 What is Client-Server Architecture?
+
+**Client-Server Architecture** is a network design where the **client** requests services or resources, and the **server** provides them. It divides tasks and responsibilities between the two, allowing for efficient resource sharing, centralized control, and scalability.
+
+---
+
+## 🧩 Key Components
+
+| Component  | Role                                                                |
+| ---------- | ------------------------------------------------------------------- |
+| **Client** | Initiates requests (e.g., a browser requesting a webpage).          |
+| **Server** | Responds to requests (e.g., a web server sending back the webpage). |
+
+---
+
+## 🔄 How It Works
+
+1. **Client** sends a request (e.g., "fetch this page").
+2. **Server** processes it and sends back a response (e.g., "here's the page").
+
+---
+
+## 🔹 Types of Client-Server Architecture
+
+### 1. **1-Tier Architecture (Monolithic)**
+
+* Everything (UI, logic, database) runs on a single system.
+* **Example**: A standalone desktop app.
+* ❌ Not scalable or flexible.
+
+---
+
+### 2. **2-Tier Architecture**
+
+* Splits into:
+
+  * **Client**: UI and business logic
+  * **Server**: Database
+* **Example**: Applications using SQL Server as backend and a frontend app.
+* ✅ Better than 1-tier but still limited in scalability.
+
+---
+
+### 3. **3-Tier Architecture (Most Common)**
+
+* Three layers:
+
+  1. **Presentation Layer (Client UI)**
+  2. **Application Layer (Business Logic)**
+  3. **Data Layer (Database)**
+* **Example**: Web browser → Web server → Database server
+* ✅ Highly scalable, secure, and manageable.
+
+---
+
+### 4. **N-Tier Architecture (Multi-Tier)**
+
+* Extends 3-tier by adding more layers like:
+
+  * Web server
+  * Application server
+  * Middleware
+* Used in enterprise and cloud apps.
+* ✅ Very modular and scalable.
+
+---
+
+### 5. **Peer-to-Peer (Not True Client-Server)**
+
+* Every node acts as both client and server.
+* **Example**: Torrent systems.
+* ❌ No central server; not a client-server model but worth contrasting.
+
+---
